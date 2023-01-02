@@ -34,7 +34,7 @@ def command():
         return  "None"
     return query
 
-# การทำงาน
+# คำสั่งต่างๆ
 while True:
     query = command().lower()
 
