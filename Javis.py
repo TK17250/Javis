@@ -8,6 +8,7 @@ engine = tx.init()
 TH = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_THAI" # เพิ่มเสียงภาษาไทย
 engine.setProperty("voice", TH)
 engine.setProperty('rate', 190)
+volume = engine.getProperty('volume')
 
 def speak(audio):
     engine.say(audio) # ให้ Ai พูด
@@ -19,7 +20,6 @@ def command():
 
     with sr.Microphone() as source:
         print("กำลังฟัง...")
-        r.pause_threshold = 1 # รอคำสั่ง 1 วิ
         r.adjust_for_ambient_noise(source, duration= 1) # ปรับเสียงรบกวน
         audio = r.listen(source)
 
@@ -35,8 +35,28 @@ def command():
     return query
 
 # คำสั่งต่างๆ
+speak("สวัสดีครับ ผมชื่อ จาวิส มีอะไรให้ผมช่วยก็บอกมาเลยนะครับ") # คำพูดเริ่มต้น
 while True:
     query = command().lower()
 
-    if query in query:
-        speak(f"คุณพูดว่า >>> {query}")
+    # เปิด ไฟล์
+    if "เปิดไฟล์" in query:
+        os.startfile("D:")
+
+    # เรียกหา
+    elif "จาวิส" and "จาร์วิส" in query:
+        speak("มีอะไรให้ช่วยครับ")
+
+    # เปิด vs code
+    elif "เปิด vscode" and "เปิด vs code" in query:
+        os.startfile("E:\Visual Studio code\Microsoft VS Code\Code.exe")
+
+    # เปิดระบบ
+    elif "เปิดระบบ" in query:
+        engine.setProperty('volume',1)
+        speak("ทำการเปิดระบบใหม่อีกครั้ง")
+
+    # ปิดระบบ
+    elif "ปิดระบบ" in query:
+        speak("ทำการปิดระบบ")
+        engine.setProperty('volume',0)
