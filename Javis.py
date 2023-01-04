@@ -1,8 +1,12 @@
 import pyttsx3 as tx
 import speech_recognition as sr
 import os
+import random
 
 engine = tx.init()
+
+# อาหารแต่ละมื้อ
+Food = ["ยำไข่ดาว","กระเพราหมูกรอบ","ส้มตำ"]
 
 # Setting Speak
 TH = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_THAI" # เพิ่มเสียงภาษาไทย
@@ -60,3 +64,7 @@ while True:
     elif "ปิดระบบ" in query:
         speak("ทำการปิดระบบ")
         engine.setProperty('volume',0)
+
+    # สุ่มอาหาร
+    elif "มื้อนี้กินอะไรดี" in query:
+        speak(f"ผมว่าอาหารมื้อนี้กิน {random.choice(Food)} นะครับ")
