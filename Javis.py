@@ -73,10 +73,6 @@ while True:
     elif "เปิดเพลง" in query:
         os.startfile("D:\Desktop\YouTube Music.lnk")
 
-    # เปิดเบราเซอร์
-    elif "เปิด Youtube" in query:
-        os.startfile("D:\Desktop\link\YouTube.url")
-
     # เปิดDiscord
     elif "เปิด Discord" or "เปิดดิสคอร์ด"  in query:
         os.startfile("D:\Desktop\Discord.lnk")
