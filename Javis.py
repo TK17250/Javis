@@ -68,3 +68,15 @@ while True:
     # สุ่มอาหาร
     elif "มื้อนี้กินอะไรดี" in query:
         speak(f"ผมว่าอาหารมื้อนี้กิน {random.choice(Food)} นะครับ")
+
+    # เปิดเพลง
+    elif "เปิดเพลง" in query:
+        os.startfile("D:\Desktop\YouTube Music.lnk")
+
+    # เปิดเบราเซอร์
+    elif "เปิด Youtube" in query:
+        os.startfile("D:\Desktop\link\YouTube.url")
+
+    # เปิดDiscord
+    elif "เปิด Discord" or "เปิดดิสคอร์ด"  in query:
+        os.startfile("D:\Desktop\Discord.lnk")
