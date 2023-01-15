@@ -38,41 +38,58 @@ def command():
         return  "None"
     return query
 
-# คำสั่งต่างๆ
-speak("สวัสดีครับ ผมชื่อ จาวิส มีอะไรให้ผมช่วยก็บอกมาเลยนะครับ") # คำพูดเริ่มต้น
-while True:
-    query = command().lower()
+# Login
+# bin to text > ประมวลข้อความ > ถ้าผ่านก็เข้าระบบได้
+# สร้างตัวแปร = Binary
+A = str("01000001")
+B = str("01000010")
+C = str("01000011")
 
-    # เปิด ไฟล์
-    if "เปิดไฟล์" in query:
-        os.startfile("D:")
+pas = str(f"{A} {B} {C}") # บวกข้อความ Binary
 
-    # เรียกหา
-    elif "จาวิส" and "จาร์วิส" in query:
-        speak("มีอะไรให้ช่วยครับ")
+speak("คุณต้องยืนยันตัวตนถึงจะใช้งานได้")
+Binary = str(input("ใส่รหัส A B C >>> ")) # input เลข Binary
 
-    # เปิด vs code
-    elif "เปิด vscode" and "เปิด vs code" in query:
-        os.startfile("E:\Visual Studio code\Microsoft VS Code\Code.exe")
+if Binary == str(pas):
+    # คำสั่งต่างๆ
+    speak("เข้าสู่ระบบสำเร็จ")
+    speak("สวัสดีครับ ผมชื่อ จาวิส มีอะไรให้ผมช่วยก็บอกมาเลยนะครับ") # คำพูดเริ่มต้น
+    while True:
+      query = command().lower()
 
-    # เปิดระบบ
-    elif "เปิดระบบ" in query:
-        engine.setProperty('volume',1)
-        speak("ทำการเปิดระบบใหม่อีกครั้ง")
+      # เปิด ไฟล์
+      if "เปิดไฟล์" in query:
+           os.startfile("D:")
 
-    # ปิดระบบ
-    elif "ปิดระบบ" in query:
-        speak("ทำการปิดระบบ")
-        engine.setProperty('volume',0)
+      # เรียกหา
+      elif "จาวิส" and "จาร์วิส" in query:
+          speak("มีอะไรให้ช่วยครับ")
 
-    # สุ่มอาหาร
-    elif "มื้อนี้กินอะไรดี" in query:
-        speak(f"ผมว่าอาหารมื้อนี้กิน {random.choice(Food)} นะครับ")
+      # เปิด vs code
+      elif "เปิด vscode" and "เปิด vs code" in query:
+          os.startfile("E:\Visual Studio code\Microsoft VS Code\Code.exe")
 
-    # เปิดเพลง
-    elif "เปิดเพลง" in query:
-        os.startfile("D:\Desktop\YouTube Music.lnk")
+      # เปิดระบบ
+      elif "เปิดระบบ" in query:
+          engine.setProperty('volume',1)
+          speak("ทำการเปิดระบบใหม่อีกครั้ง")
 
-    # เปิดDiscord
-    elif "เปิด Discord" or "เปิดดิสคอร์ด"  in query:
-        os.startfile("D:\Desktop\Discord.lnk")
+      # ปิดระบบ
+      elif "ปิดระบบ" in query:
+          speak("ทำการปิดระบบ")
+          engine.setProperty('volume',0)
+
+      # สุ่มอาหาร
+      elif "มื้อนี้กินอะไรดี" in query:
+         speak(f"ผมว่าอาหารมื้อนี้กิน {random.choice(Food)} นะครับ")
+
+      # เปิดเพลง
+      elif "เปิดเพลง" in query:
+          os.startfile("D:\Desktop\YouTube Music.lnk")
+
+      # เปิดDiscord
+      elif "เปิด Discord" or "เปิดดิสคอร์ด"  in query:
+          os.startfile("D:\Desktop\Discord.lnk")
+
+else:
+    speak("เกิดข้อผิดพลาด")
