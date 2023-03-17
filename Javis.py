@@ -88,7 +88,7 @@ if Binary == str(pas):
           os.startfile("D:\Desktop\YouTube Music.lnk")
 
       # เปิดDiscord
-      elif "เปิด Discord" or "เปิดดิสคอร์ด"  in query:
+      elif "เปิดDiscord" or "เปิดดิสคอร์ด"  in query:
           os.startfile("D:\Desktop\Discord.lnk")
 
 else:
