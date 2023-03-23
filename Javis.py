@@ -6,7 +6,7 @@ import random
 engine = tx.init()
 
 # อาหารแต่ละมื้อ
-Food = ["ยำไข่ดาว","กระเพราหมูกรอบ","ส้มตำ"]
+Food = ["ยำไข่ดาว","กระเพราหมูกรอบ","ส้มตำ","กระเพราหมูสับ","ข้าวผัด","สเต็ก"]
 
 # Setting Speak
 TH = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_THAI" # เพิ่มเสียงภาษาไทย
